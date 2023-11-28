@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yu-Gi-Oh Jokenpo Edtion</title>
+    <!-- Reset -->
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <!-- Framework -->
+    <link rel="stylesheet" href="./src/styles/buttons.css">
+    <link rel="stylesheet" href="./src/styles/containers_and_frames.css">
+    <!-- Main style -->
+    <link rel="stylesheet" href="./src/styles/main.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Criando uma div que armazena bkground com o video -->
+    <div class="bg-video">
+        <video class="video" autoplay loop muted>
+            <source src="./src/assets/video/yugi.mp4" type="video/mp4">
+        </video>
+    </div>
+    <!-- Container maior -->
+    <div class="container">
+        <!-- Contador de pontos, Detalhe da carta e a img da carta -->
+        <div class="container__left">
+            <div class="score_box">
+                <span id="score_points">
+                    win : 0 | Lose: 0
+                </span>
+            </div>
+            <div class="menu_avatar">
+                <img id="card-image">
+            </div>
+            <div class="card_details">
+                <p id="card-name"></p>
+                <p id="card-type"></p>
+            </div>
+        </div>
+        <!-- Cards inimigo e jogador-->
+        <div class="container__right">
+            <div class="card-box__container">
+                
+            </div>
+        </div>
+    </div>
+    <script src="./src/scripts/engine.js" defer></script>
+</body>
+</html>
