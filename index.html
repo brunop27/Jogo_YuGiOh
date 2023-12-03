@@ -43,8 +43,34 @@
         <!-- Cards inimigo e jogador-->
         <div class="container__right">
             <div class="card-box__container">
-                
-            </div>
+                <!-- CArta do inimigo -->
+                <div class="card-box framed" id="computer-cards">
+                    
+
+                </div>
+                <!-- Campo de batalha -->
+                <div class="card-versus__container">
+                    <div class="versus-top">
+                        <div class="card-infield">
+                            <!-- Injetado automaticamente pelo js -->
+                            <img id="player-field-card" alt="" height="180px" width="126px">
+                        </div>
+                        <img src="src/assets/icons/millenium2.png" alt="" height="100px">
+                        <div class="card-infield">
+                            <!-- Injetado automaticamente pelo js -->
+                            <img id="computer-field-card" alt="" height="180px" width="126px">
+                        </div>
+                    </div>
+                    <div class="versus-bottom">
+                        <button id="next-duel" class="rpgui-button" onclick="resetDuel()">GANHOU</button>
+                    </div>
+
+                </div>
+                <!-- Cartas do jogador -->
+                <div class="card-box framed" id="player-cards">
+                    
+                </div> 
+            </div>          
         </div>
     </div>
     <script src="./src/scripts/engine.js" defer></script>
