@@ -47,17 +47,15 @@ button, a, img:hover, button:hover, a:hover{
     align-items: center;
     justify-content: space-around;
     gap: 5px;
-
 }
 
 .container__right{
     width: 75%;
-
 }
 
 .score_box{
     background-color: #FFF;
-    padding: 15px;
+    padding: 2rem .2rem;
 }
 
 .frame{
@@ -75,15 +73,14 @@ button, a, img:hover, button:hover, a:hover{
     width: 100%;
     padding: 0.5rem;
     text-align: center;
-
 }
 
 #card-name{
-    font-size: .8rem;
+    font-size: 1rem;
 }
 
 #card-type{
-    font-size: .6rem;
+    font-size: .8rem;
 }
 
 .card-box__container{
@@ -93,7 +90,6 @@ button, a, img:hover, button:hover, a:hover{
     justify-content: space-between;
     padding: 0.1rem;
     gap: 5px;
-
 }
 
 .card-versus__container{
@@ -102,13 +98,13 @@ button, a, img:hover, button:hover, a:hover{
     justify-items: center;
     flex-direction: column;
     padding-top: 0.1rem;
-
 }
 
 .versus-top, .versus-bottom{
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .versus-bottom{
@@ -120,7 +116,7 @@ button, a, img:hover, button:hover, a:hover{
 }
 
 .card-box{
-    height: 9rem;
+    height: 13rem;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -131,9 +127,12 @@ button, a, img:hover, button:hover, a:hover{
 .card-infield{
     border: 1px solid #fff;
     border-radius: 8px;
-    height: 10rem;
+    height: 12rem;
     width: 8rem;
-    
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card{
