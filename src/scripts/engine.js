@@ -65,8 +65,8 @@ async function getRandomCardId(){
 // Usada para buscar e implementar qual carta em qual lado vai
 async function createCardImage(idCard, fieldSide){
     const cardImage = document.createElement("img");
-    cardImage.setAttribute("height", "100px");
-cardImage.setAttribute("src", "./src/assets/icons/card-back.png");
+    cardImage.setAttribute("height", "55px");
+    cardImage.setAttribute("src", "./src/assets/icons/card-back.png");
     cardImage.setAttribute("data-id",idCard);
     cardImage.classList.add("card");
 
@@ -116,6 +116,8 @@ async function showHiddenCardFieldsImages(valor){
 }
 
 async function hiddenCardDetails(){
+    state.cardSprites.avatar.style.width = "";
+    state.cardSprites.avatar.style.height = "";
     state.cardSprites.avatar.src = " ";
     state.cardSprites.name.innerText = " ";
     state.cardSprites.type.innerText = " ";
@@ -157,6 +159,8 @@ async function removeAllCarsImages(){
 }
 
 async function drawSelectCard(index){
+    state.cardSprites.avatar.style.width = "100px";
+    state.cardSprites.avatar.style.height = "140px";
     state.cardSprites.avatar.src = cardData[index].img;
     state.cardSprites.name.innerText = cardData[index].name;
     state.cardSprites.type.innerText = "Atributte: "+ cardData[index].type;
