@@ -86,19 +86,40 @@ async function setCardsField(cardId){
     // Remove todas as cartas
     await removeAllCarsImages();
 
+    await showHiddenCardFieldsImages(true);
     // Sorteia uma carta para o computador e muda o display
     let computerCardId = await getRandomCardId();
-    state.fieldCards.player.style.display = "block";
-    state.fieldCards.computer.style.display = "block";
-    state.fieldCards.player.src = cardData[cardId].img;
-    state.fieldCards.computer.src = cardData[computerCardId].img;
 
     let duelResults = await checkDuelResult(cardId, computerCardId);
 
+    await drawCardsInField(cardId, computerCardId)
+    await hiddenCardDetails();
     await updateScore();
     await drawButton(duelResults);
 };
 
+async function drawCardsInField(cardId, computerId){
+    state.fieldCards.player.src = cardData[cardId].img;
+    state.fieldCards.computer.src = cardData[computerId].img;
+}
+
+async function showHiddenCardFieldsImages(valor){
+    if(valor){
+        state.fieldCards.player.style.display = "block";
+        state.fieldCards.computer.style.display = "block";
+    }
+
+    if(!valor){
+        state.fieldCards.player.style.display = "none";
+        state.fieldCards.computer.style.display = "none";    
+    }
+}
+
+async function hiddenCardDetails(){
+    state.cardSprites.avatar.src = " ";
+    state.cardSprites.name.innerText = " ";
+    state.cardSprites.type.innerText = " ";
+}
 async function updateScore(){
     state.score.scoreBox.innerText = `Win: ${state.score.playerScore} | Lose: ${state.score.computerScore}`;
 }
@@ -165,11 +186,12 @@ async function playAudio(status){
 
     try {
         audio.play();
-    } catch{}
+    } catch{ }
 }
 
 // funcao principal que chama outras funcoes ou estado
 function init(){
+    showHiddenCardFieldsImages(false);
     drawCards(5,state.playerSides.player1);
     drawCards(5,state.playerSides.computer);
 };
